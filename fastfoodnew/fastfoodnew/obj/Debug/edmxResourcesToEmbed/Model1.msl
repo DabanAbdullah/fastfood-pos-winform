@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="fastfoodModelStoreContainer" CdmEntityContainer="fastfoodEntities">
+    <EntitySetMapping Name="tablenames">
+      <EntityTypeMapping TypeName="fastfoodModel.tablename">
+        <MappingFragment StoreEntitySet="tablenames">
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="tname" ColumnName="tname" />
+          <ScalarProperty Name="tnamediplay" ColumnName="tnamediplay" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usertables">
+      <EntityTypeMapping TypeName="fastfoodModel.usertable">
+        <MappingFragment StoreEntitySet="usertable">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rolestables">
+      <EntityTypeMapping TypeName="fastfoodModel.rolestable">
+        <MappingFragment StoreEntitySet="rolestable">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="activated" ColumnName="activated" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permesiontables">
+      <EntityTypeMapping TypeName="fastfoodModel.permesiontable">
+        <MappingFragment StoreEntitySet="permesiontable">
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="canupdate" ColumnName="canupdate" />
+          <ScalarProperty Name="candelete" ColumnName="candelete" />
+          <ScalarProperty Name="canopen" ColumnName="canopen" />
+          <ScalarProperty Name="cancreate" ColumnName="cancreate" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permessions">
+      <EntityTypeMapping TypeName="fastfoodModel.permession">
+        <MappingFragment StoreEntitySet="permessions">
+          <ScalarProperty Name="سڕینەوە" ColumnName="سڕینەوە" />
+          <ScalarProperty Name="گۆڕانکاری" ColumnName="گۆڕانکاری" />
+          <ScalarProperty Name="زیادکردن" ColumnName="زیادکردن" />
+          <ScalarProperty Name="کردنەوە" ColumnName="کردنەوە" />
+          <ScalarProperty Name="زانیاری" ColumnName="زانیاری" />
+          <ScalarProperty Name="ڕۆل" ColumnName="ڕۆل" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vusers">
+      <EntityTypeMapping TypeName="fastfoodModel.vuser">
+        <MappingFragment StoreEntitySet="vusers">
+          <ScalarProperty Name="وشەی_نهێنی" ColumnName="وشەی_نهێنی" />
+          <ScalarProperty Name="ناوی_بەکارهێنەر" ColumnName="ناوی_بەکارهێنەر" />
+          <ScalarProperty Name="ڕۆڵ" ColumnName="ڕۆڵ" />
+          <ScalarProperty Name="ناوی_سیانی" ColumnName="ناوی_سیانی" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="autherizationvs">
+      <EntityTypeMapping TypeName="fastfoodModel.autherizationv">
+        <MappingFragment StoreEntitySet="autherizationv">
+          <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+          <ScalarProperty Name="tname" ColumnName="tname" />
+          <ScalarProperty Name="canupdate" ColumnName="canupdate" />
+          <ScalarProperty Name="candelete" ColumnName="candelete" />
+          <ScalarProperty Name="canopen" ColumnName="canopen" />
+          <ScalarProperty Name="cancreate" ColumnName="cancreate" />
+          <ScalarProperty Name="rolename" ColumnName="rolename" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="categorytables">
+      <EntityTypeMapping TypeName="fastfoodModel.categorytable">
+        <MappingFragment StoreEntitySet="categorytable">
+          <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="pic" ColumnName="pic" />
+          <ScalarProperty Name="catname" ColumnName="catname" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="foodtables">
+      <EntityTypeMapping TypeName="fastfoodModel.foodtable">
+        <MappingFragment StoreEntitySet="foodtable">
+          <ScalarProperty Name="lastmodiefied" ColumnName="lastmodiefied" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="fpic" ColumnName="fpic" />
+          <ScalarProperty Name="fprice" ColumnName="fprice" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="expensetables">
+      <EntityTypeMapping TypeName="fastfoodModel.expensetable">
+        <MappingFragment StoreEntitySet="expensetable">
+          <ScalarProperty Name="lastmodiefied" ColumnName="lastmodiefied" />
+          <ScalarProperty Name="modiefiedby" ColumnName="modiefiedby" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="edate" ColumnName="edate" />
+          <ScalarProperty Name="eprice" ColumnName="eprice" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saletables">
+      <EntityTypeMapping TypeName="fastfoodModel.saletable">
+        <MappingFragment StoreEntitySet="saletable">
+          <ScalarProperty Name="typee" ColumnName="typee" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="sprice" ColumnName="sprice" />
+          <ScalarProperty Name="wasl" ColumnName="wasl" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diliverytables">
+      <EntityTypeMapping TypeName="fastfoodModel.diliverytable">
+        <MappingFragment StoreEntitySet="diliverytable">
+          <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+          <ScalarProperty Name="modiefiedby" ColumnName="modiefiedby" />
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="tell" ColumnName="tell" />
+          <ScalarProperty Name="dname" ColumnName="dname" />
+          <ScalarProperty Name="did" ColumnName="did" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vorders">
+      <EntityTypeMapping TypeName="fastfoodModel.vorder">
+        <MappingFragment StoreEntitySet="vorder">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="wasl" ColumnName="wasl" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="qty" ColumnName="qty" />
+          <ScalarProperty Name="sprice" ColumnName="sprice" />
+          <ScalarProperty Name="fpic" ColumnName="fpic" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="sid" ColumnName="sid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notetables">
+      <EntityTypeMapping TypeName="fastfoodModel.notetable">
+        <MappingFragment StoreEntitySet="notetable">
+          <ScalarProperty Name="note" ColumnName="note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wasltables">
+      <EntityTypeMapping TypeName="fastfoodModel.wasltable">
+        <MappingFragment StoreEntitySet="wasltable">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+          <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+          <ScalarProperty Name="tell" ColumnName="tell" />
+          <ScalarProperty Name="createdby" ColumnName="createdby" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="sdate" ColumnName="sdate" />
+          <ScalarProperty Name="wasl" ColumnName="wasl" />
+          <ScalarProperty Name="wid" ColumnName="wid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vexpenses">
+      <EntityTypeMapping TypeName="fastfoodModel.vexpense">
+        <MappingFragment StoreEntitySet="vexpense">
+          <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="edate" ColumnName="edate" />
+          <ScalarProperty Name="eprice" ColumnName="eprice" />
+          <ScalarProperty Name="ename" ColumnName="ename" />
+          <ScalarProperty Name="eid" ColumnName="eid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

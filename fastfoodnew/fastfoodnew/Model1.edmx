@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="fastfoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="categorytable">
+          <Key>
+            <PropertyRef Name="catid" />
+          </Key>
+          <Property Name="catid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catname" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="pic" Type="varbinary(max)" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="lastmodified" Type="datetime" />
+        </EntityType>
+        <EntityType Name="diliverytable">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="tell" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="modiefiedby" Type="int" />
+          <Property Name="lastmodified" Type="datetime" />
+        </EntityType>
+        <EntityType Name="expensetable">
+          <Key>
+            <PropertyRef Name="eid" />
+          </Key>
+          <Property Name="eid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ename" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="eprice" Type="money" Nullable="false" />
+          <Property Name="edate" Type="date" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="modiefiedby" Type="int" />
+          <Property Name="lastmodiefied" Type="datetime" />
+        </EntityType>
+        <EntityType Name="foodtable">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" Nullable="false" />
+          <Property Name="catid" Type="int" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fprice" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fpic" Type="varbinary(max)" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="lastmodiefied" Type="datetime" />
+        </EntityType>
+        <EntityType Name="notetable">
+          <Key>
+            <PropertyRef Name="note" />
+          </Key>
+          <Property Name="note" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="permesiontable">
+          <Key>
+            <PropertyRef Name="permesionId" />
+          </Key>
+          <Property Name="permesionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="cancreate" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="canopen" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="candelete" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="canupdate" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="tid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rolestable">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="rolename" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="activated" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="saletable">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fid" Type="int" Nullable="false" />
+          <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="sprice" Type="money" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="sdate" Type="date" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="lastmodified" Type="datetime" />
+          <Property Name="note" Type="nvarchar" MaxLength="120" />
+          <Property Name="typee" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tablenames">
+          <Key>
+            <PropertyRef Name="tid" />
+          </Key>
+          <Property Name="tid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tname" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="tnamediplay" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usertable">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="wasltable">
+          <Key>
+            <PropertyRef Name="wid" />
+          </Key>
+          <Property Name="wid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="sdate" Type="date" Nullable="false" />
+          <Property Name="did" Type="int" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="tell" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="modifiedby" Type="int" />
+          <Property Name="lastmodified" Type="datetime" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.autherizationv' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="autherizationv">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="rolename" />
+            <PropertyRef Name="cancreate" />
+            <PropertyRef Name="canopen" />
+            <PropertyRef Name="candelete" />
+            <PropertyRef Name="canupdate" />
+            <PropertyRef Name="tname" />
+            <PropertyRef Name="permesionId" />
+          </Key>
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="rolename" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="cancreate" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="canopen" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="candelete" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="canupdate" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="tname" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="permesionId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.permessions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="permessions">
+          <Key>
+            <PropertyRef Name="permesionId" />
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="ڕۆل" />
+            <PropertyRef Name="زانیاری" />
+            <PropertyRef Name="کردنەوە" />
+            <PropertyRef Name="زیادکردن" />
+            <PropertyRef Name="گۆڕانکاری" />
+            <PropertyRef Name="سڕینەوە" />
+          </Key>
+          <Property Name="permesionId" Type="int" Nullable="false" />
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="ڕۆل" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="زانیاری" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="کردنەوە" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="زیادکردن" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="گۆڕانکاری" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="سڕینەوە" Type="nvarchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vexpense' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vexpense">
+          <Key>
+            <PropertyRef Name="eid" />
+            <PropertyRef Name="ename" />
+            <PropertyRef Name="eprice" />
+            <PropertyRef Name="edate" />
+            <PropertyRef Name="fullname" />
+            <PropertyRef Name="isdeleted" />
+          </Key>
+          <Property Name="eid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="ename" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="eprice" Type="money" Nullable="false" />
+          <Property Name="edate" Type="date" Nullable="false" />
+          <Property Name="fullname" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vorder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vorder">
+          <Key>
+            <PropertyRef Name="sid" />
+            
+            
+            
+            
+            <PropertyRef Name="sdate" />
+            <PropertyRef Name="createdby" />
+            <PropertyRef Name="wasl" />
+            <PropertyRef Name="isdeleted" />
+          </Key>
+          <Property Name="sid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fpic" Type="varbinary(max)" Nullable="false" />
+          <Property Name="sprice" Type="money" Nullable="false" />
+          <Property Name="qty" Type="int" Nullable="false" />
+          <Property Name="note" Type="nvarchar" MaxLength="80" />
+          <Property Name="sdate" Type="date" Nullable="false" />
+          <Property Name="createdby" Type="int" Nullable="false" />
+          <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vusers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vusers">
+          <Key>
+            <PropertyRef Name="userid" />
+            <PropertyRef Name="ناوی_سیانی" />
+            <PropertyRef Name="ڕۆڵ" />
+            <PropertyRef Name="ناوی_بەکارهێنەر" />
+            <PropertyRef Name="وشەی_نهێنی" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="ناوی_سیانی" Type="nvarchar" MaxLength="90" Nullable="false" />
+          <Property Name="ڕۆڵ" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="ناوی_بەکارهێنەر" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="وشەی_نهێنی" Type="nvarchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="fastfoodModelStoreContainer">
+          <EntitySet Name="categorytable" EntityType="Self.categorytable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="diliverytable" EntityType="Self.diliverytable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="expensetable" EntityType="Self.expensetable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="foodtable" EntityType="Self.foodtable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="notetable" EntityType="Self.notetable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="permesiontable" EntityType="Self.permesiontable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rolestable" EntityType="Self.rolestable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="saletable" EntityType="Self.saletable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tablenames" EntityType="Self.tablenames" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usertable" EntityType="Self.usertable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="wasltable" EntityType="Self.wasltable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="autherizationv" EntityType="Self.autherizationv" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [autherizationv].[roleid] AS [roleid], 
+    [autherizationv].[rolename] AS [rolename], 
+    [autherizationv].[cancreate] AS [cancreate], 
+    [autherizationv].[canopen] AS [canopen], 
+    [autherizationv].[candelete] AS [candelete], 
+    [autherizationv].[canupdate] AS [canupdate], 
+    [autherizationv].[tname] AS [tname], 
+    [autherizationv].[permesionId] AS [permesionId]
+    FROM [dbo].[autherizationv] AS [autherizationv]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="permessions" EntityType="Self.permessions" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [permessions].[permesionId] AS [permesionId], 
+    [permessions].[roleid] AS [roleid], 
+    [permessions].[ڕۆل] AS [ڕۆل], 
+    [permessions].[زانیاری] AS [زانیاری], 
+    [permessions].[کردنەوە] AS [کردنەوە], 
+    [permessions].[زیادکردن] AS [زیادکردن], 
+    [permessions].[گۆڕانکاری] AS [گۆڕانکاری], 
+    [permessions].[سڕینەوە] AS [سڕینەوە]
+    FROM [dbo].[permessions] AS [permessions]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vexpense" EntityType="Self.vexpense" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vexpense].[eid] AS [eid], 
+    [vexpense].[ename] AS [ename], 
+    [vexpense].[eprice] AS [eprice], 
+    [vexpense].[edate] AS [edate], 
+    [vexpense].[fullname] AS [fullname], 
+    [vexpense].[isdeleted] AS [isdeleted]
+    FROM [dbo].[vexpense] AS [vexpense]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vorder" EntityType="Self.vorder" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vorder].[sid] AS [sid], 
+    [vorder].[fname] AS [fname], 
+    [vorder].[fpic] AS [fpic], 
+    [vorder].[sprice] AS [sprice], 
+    [vorder].[qty] AS [qty], 
+    [vorder].[note] AS [note], 
+    [vorder].[sdate] AS [sdate], 
+    [vorder].[createdby] AS [createdby], 
+    [vorder].[wasl] AS [wasl], 
+    [vorder].[isdeleted] AS [isdeleted]
+    FROM [dbo].[vorder] AS [vorder]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vusers" EntityType="Self.vusers" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vusers].[userid] AS [userid], 
+    [vusers].[ناوی_سیانی] AS [ناوی_سیانی], 
+    [vusers].[ڕۆڵ] AS [ڕۆڵ], 
+    [vusers].[ناوی_بەکارهێنەر] AS [ناوی_بەکارهێنەر], 
+    [vusers].[وشەی_نهێنی] AS [وشەی_نهێنی]
+    FROM [dbo].[vusers] AS [vusers]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="fastfoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tablename">
+          <Key>
+            <PropertyRef Name="tid" />
+          </Key>
+          <Property Name="tid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tname" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tnamediplay" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usertable">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fullname" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="fastfoodEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tablenames" EntityType="Self.tablename" />
+          <EntitySet Name="usertables" EntityType="Self.usertable" />
+          <EntitySet Name="rolestables" EntityType="fastfoodModel.rolestable" />
+          <EntitySet Name="permesiontables" EntityType="fastfoodModel.permesiontable" />
+          <EntitySet Name="permessions" EntityType="fastfoodModel.permession" />
+          <EntitySet Name="vusers" EntityType="fastfoodModel.vuser" />
+          <EntitySet Name="autherizationvs" EntityType="fastfoodModel.autherizationv" />
+          <EntitySet Name="categorytables" EntityType="fastfoodModel.categorytable" />
+          <EntitySet Name="foodtables" EntityType="fastfoodModel.foodtable" />
+          <EntitySet Name="expensetables" EntityType="fastfoodModel.expensetable" />
+          <EntitySet Name="saletables" EntityType="fastfoodModel.saletable" />
+          <EntitySet Name="diliverytables" EntityType="fastfoodModel.diliverytable" />
+          <EntitySet Name="vorders" EntityType="fastfoodModel.vorder" />
+          <EntitySet Name="notetables" EntityType="fastfoodModel.notetable" />
+          <EntitySet Name="wasltables" EntityType="fastfoodModel.wasltable" />
+          <EntitySet Name="vexpenses" EntityType="fastfoodModel.vexpense" />
+        </EntityContainer>
+        <EntityType Name="rolestable">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <Property Name="rolename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="activated" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="isdeleted" Type="String" MaxLength="1" FixedLength="false" Unicode="false" DefaultValue="n" />
+        </EntityType>
+        <EntityType Name="permesiontable">
+          <Key>
+            <PropertyRef Name="permesionId" />
+          </Key>
+          <Property Name="permesionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <Property Name="cancreate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="canopen" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="candelete" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="canupdate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="tid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="permession">
+          <Key>
+            <PropertyRef Name="permesionId" />
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="ڕۆل" />
+            <PropertyRef Name="زانیاری" />
+            <PropertyRef Name="کردنەوە" />
+            <PropertyRef Name="زیادکردن" />
+            <PropertyRef Name="گۆڕانکاری" />
+            <PropertyRef Name="سڕینەوە" />
+          </Key>
+          <Property Name="permesionId" Type="Int32" Nullable="false" />
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <Property Name="ڕۆل" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="زانیاری" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="کردنەوە" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="زیادکردن" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="گۆڕانکاری" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="سڕینەوە" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vuser">
+          <Key>
+            <PropertyRef Name="userid" />
+            <PropertyRef Name="ناوی_سیانی" />
+            <PropertyRef Name="ڕۆڵ" />
+            <PropertyRef Name="ناوی_بەکارهێنەر" />
+            <PropertyRef Name="وشەی_نهێنی" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" />
+          <Property Name="ناوی_سیانی" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="ڕۆڵ" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="ناوی_بەکارهێنەر" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="وشەی_نهێنی" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="autherizationv">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="rolename" />
+            <PropertyRef Name="cancreate" />
+            <PropertyRef Name="canopen" />
+            <PropertyRef Name="candelete" />
+            <PropertyRef Name="canupdate" />
+            <PropertyRef Name="tname" />
+            <PropertyRef Name="permesionId" />
+          </Key>
+          <Property Name="roleid" Type="Int32" Nullable="false" />
+          <Property Name="rolename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="cancreate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="canopen" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="candelete" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="canupdate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="tname" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="permesionId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="categorytable">
+          <Key>
+            <PropertyRef Name="catid" />
+          </Key>
+          <Property Name="catid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catname" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="pic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="lastmodified" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="foodtable">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" />
+          <Property Name="catid" Type="Int32" Nullable="false" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fprice" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fpic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="lastmodiefied" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="expensetable">
+          <Key>
+            <PropertyRef Name="eid" />
+          </Key>
+          <Property Name="eid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="eprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="edate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="modiefiedby" Type="Int32" />
+          <Property Name="lastmodiefied" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="saletable">
+          <Key>
+            <PropertyRef Name="sid" />
+          </Key>
+          <Property Name="sid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="fid" Type="Int32" Nullable="false" />
+          <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="sprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="lastmodified" Type="DateTime" Precision="3" />
+          <Property Name="note" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+          <Property Name="typee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="diliverytable">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tell" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="modiefiedby" Type="Int32" />
+          <Property Name="lastmodified" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vorder">
+          <Key>
+            <PropertyRef Name="sid" />
+            <PropertyRef Name="sdate" />
+            <PropertyRef Name="createdby" />
+            <PropertyRef Name="wasl" />
+            <PropertyRef Name="isdeleted" />
+          </Key>
+          <Property Name="sid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fpic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="sprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="qty" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+          <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="notetable">
+          <Key>
+            <PropertyRef Name="note" />
+          </Key>
+          <Property Name="note" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="wasltable">
+          <Key>
+            <PropertyRef Name="wid" />
+          </Key>
+          <Property Name="wid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="did" Type="Int32" Nullable="false" />
+          <Property Name="createdby" Type="Int32" Nullable="false" />
+          <Property Name="tell" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="modifiedby" Type="Int32" />
+          <Property Name="lastmodified" Type="DateTime" Precision="3" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vexpense">
+          <Key>
+            <PropertyRef Name="eid" />
+            <PropertyRef Name="ename" />
+            <PropertyRef Name="eprice" />
+            <PropertyRef Name="edate" />
+            <PropertyRef Name="fullname" />
+            <PropertyRef Name="isdeleted" />
+          </Key>
+          <Property Name="eid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="ename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="eprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="edate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="fullname" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+          <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="fastfoodModelStoreContainer" CdmEntityContainer="fastfoodEntities">
+          <EntitySetMapping Name="tablenames">
+            <EntityTypeMapping TypeName="fastfoodModel.tablename">
+              <MappingFragment StoreEntitySet="tablenames">
+                <ScalarProperty Name="tid" ColumnName="tid" />
+                <ScalarProperty Name="tname" ColumnName="tname" />
+                <ScalarProperty Name="tnamediplay" ColumnName="tnamediplay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usertables">
+            <EntityTypeMapping TypeName="fastfoodModel.usertable">
+              <MappingFragment StoreEntitySet="usertable">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rolestables">
+            <EntityTypeMapping TypeName="fastfoodModel.rolestable">
+              <MappingFragment StoreEntitySet="rolestable">
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="activated" ColumnName="activated" />
+                <ScalarProperty Name="rolename" ColumnName="rolename" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permesiontables">
+            <EntityTypeMapping TypeName="fastfoodModel.permesiontable">
+              <MappingFragment StoreEntitySet="permesiontable">
+                <ScalarProperty Name="tid" ColumnName="tid" />
+                <ScalarProperty Name="canupdate" ColumnName="canupdate" />
+                <ScalarProperty Name="candelete" ColumnName="candelete" />
+                <ScalarProperty Name="canopen" ColumnName="canopen" />
+                <ScalarProperty Name="cancreate" ColumnName="cancreate" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permessions">
+            <EntityTypeMapping TypeName="fastfoodModel.permession">
+              <MappingFragment StoreEntitySet="permessions">
+                <ScalarProperty Name="سڕینەوە" ColumnName="سڕینەوە" />
+                <ScalarProperty Name="گۆڕانکاری" ColumnName="گۆڕانکاری" />
+                <ScalarProperty Name="زیادکردن" ColumnName="زیادکردن" />
+                <ScalarProperty Name="کردنەوە" ColumnName="کردنەوە" />
+                <ScalarProperty Name="زانیاری" ColumnName="زانیاری" />
+                <ScalarProperty Name="ڕۆل" ColumnName="ڕۆل" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vusers">
+            <EntityTypeMapping TypeName="fastfoodModel.vuser">
+              <MappingFragment StoreEntitySet="vusers">
+                <ScalarProperty Name="وشەی_نهێنی" ColumnName="وشەی_نهێنی" />
+                <ScalarProperty Name="ناوی_بەکارهێنەر" ColumnName="ناوی_بەکارهێنەر" />
+                <ScalarProperty Name="ڕۆڵ" ColumnName="ڕۆڵ" />
+                <ScalarProperty Name="ناوی_سیانی" ColumnName="ناوی_سیانی" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="autherizationvs">
+            <EntityTypeMapping TypeName="fastfoodModel.autherizationv">
+              <MappingFragment StoreEntitySet="autherizationv">
+                <ScalarProperty Name="permesionId" ColumnName="permesionId" />
+                <ScalarProperty Name="tname" ColumnName="tname" />
+                <ScalarProperty Name="canupdate" ColumnName="canupdate" />
+                <ScalarProperty Name="candelete" ColumnName="candelete" />
+                <ScalarProperty Name="canopen" ColumnName="canopen" />
+                <ScalarProperty Name="cancreate" ColumnName="cancreate" />
+                <ScalarProperty Name="rolename" ColumnName="rolename" />
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="categorytables">
+            <EntityTypeMapping TypeName="fastfoodModel.categorytable">
+              <MappingFragment StoreEntitySet="categorytable">
+                <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="pic" ColumnName="pic" />
+                <ScalarProperty Name="catname" ColumnName="catname" />
+                <ScalarProperty Name="catid" ColumnName="catid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="foodtables">
+            <EntityTypeMapping TypeName="fastfoodModel.foodtable">
+              <MappingFragment StoreEntitySet="foodtable">
+                <ScalarProperty Name="lastmodiefied" ColumnName="lastmodiefied" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="fpic" ColumnName="fpic" />
+                <ScalarProperty Name="fprice" ColumnName="fprice" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="catid" ColumnName="catid" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="expensetables">
+            <EntityTypeMapping TypeName="fastfoodModel.expensetable">
+              <MappingFragment StoreEntitySet="expensetable">
+                <ScalarProperty Name="lastmodiefied" ColumnName="lastmodiefied" />
+                <ScalarProperty Name="modiefiedby" ColumnName="modiefiedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="edate" ColumnName="edate" />
+                <ScalarProperty Name="eprice" ColumnName="eprice" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="eid" ColumnName="eid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="saletables">
+            <EntityTypeMapping TypeName="fastfoodModel.saletable">
+              <MappingFragment StoreEntitySet="saletable">
+                <ScalarProperty Name="typee" ColumnName="typee" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="sprice" ColumnName="sprice" />
+                <ScalarProperty Name="wasl" ColumnName="wasl" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="diliverytables">
+            <EntityTypeMapping TypeName="fastfoodModel.diliverytable">
+              <MappingFragment StoreEntitySet="diliverytable">
+                <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+                <ScalarProperty Name="modiefiedby" ColumnName="modiefiedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="tell" ColumnName="tell" />
+                <ScalarProperty Name="dname" ColumnName="dname" />
+                <ScalarProperty Name="did" ColumnName="did" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vorders">
+            <EntityTypeMapping TypeName="fastfoodModel.vorder">
+              <MappingFragment StoreEntitySet="vorder">
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="wasl" ColumnName="wasl" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="qty" ColumnName="qty" />
+                <ScalarProperty Name="sprice" ColumnName="sprice" />
+                <ScalarProperty Name="fpic" ColumnName="fpic" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="sid" ColumnName="sid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notetables">
+            <EntityTypeMapping TypeName="fastfoodModel.notetable">
+              <MappingFragment StoreEntitySet="notetable">
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="wasltables">
+            <EntityTypeMapping TypeName="fastfoodModel.wasltable">
+              <MappingFragment StoreEntitySet="wasltable">
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="lastmodified" ColumnName="lastmodified" />
+                <ScalarProperty Name="modifiedby" ColumnName="modifiedby" />
+                <ScalarProperty Name="tell" ColumnName="tell" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="sdate" ColumnName="sdate" />
+                <ScalarProperty Name="wasl" ColumnName="wasl" />
+                <ScalarProperty Name="wid" ColumnName="wid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vexpenses">
+            <EntityTypeMapping TypeName="fastfoodModel.vexpense">
+              <MappingFragment StoreEntitySet="vexpense">
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="edate" ColumnName="edate" />
+                <ScalarProperty Name="eprice" ColumnName="eprice" />
+                <ScalarProperty Name="ename" ColumnName="ename" />
+                <ScalarProperty Name="eid" ColumnName="eid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fastfoodModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tablename">
+    <Key>
+      <PropertyRef Name="tid" />
+    </Key>
+    <Property Name="tid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tname" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tnamediplay" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usertable">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="90" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="fastfoodEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tablenames" EntityType="Self.tablename" />
+    <EntitySet Name="usertables" EntityType="Self.usertable" />
+    <EntitySet Name="rolestables" EntityType="fastfoodModel.rolestable" />
+    <EntitySet Name="permesiontables" EntityType="fastfoodModel.permesiontable" />
+    <EntitySet Name="permessions" EntityType="fastfoodModel.permession" />
+    <EntitySet Name="vusers" EntityType="fastfoodModel.vuser" />
+    <EntitySet Name="autherizationvs" EntityType="fastfoodModel.autherizationv" />
+    <EntitySet Name="categorytables" EntityType="fastfoodModel.categorytable" />
+    <EntitySet Name="foodtables" EntityType="fastfoodModel.foodtable" />
+    <EntitySet Name="expensetables" EntityType="fastfoodModel.expensetable" />
+    <EntitySet Name="saletables" EntityType="fastfoodModel.saletable" />
+    <EntitySet Name="diliverytables" EntityType="fastfoodModel.diliverytable" />
+    <EntitySet Name="vorders" EntityType="fastfoodModel.vorder" />
+    <EntitySet Name="notetables" EntityType="fastfoodModel.notetable" />
+    <EntitySet Name="wasltables" EntityType="fastfoodModel.wasltable" />
+    <EntitySet Name="vexpenses" EntityType="fastfoodModel.vexpense" />
+  </EntityContainer>
+  <EntityType Name="rolestable">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="activated" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="isdeleted" Type="String" MaxLength="1" FixedLength="false" Unicode="false" DefaultValue="n" />
+  </EntityType>
+  <EntityType Name="permesiontable">
+    <Key>
+      <PropertyRef Name="permesionId" />
+    </Key>
+    <Property Name="permesionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="cancreate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="canopen" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="candelete" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="canupdate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="tid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="permession">
+    <Key>
+      <PropertyRef Name="permesionId" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="ڕۆل" />
+      <PropertyRef Name="زانیاری" />
+      <PropertyRef Name="کردنەوە" />
+      <PropertyRef Name="زیادکردن" />
+      <PropertyRef Name="گۆڕانکاری" />
+      <PropertyRef Name="سڕینەوە" />
+    </Key>
+    <Property Name="permesionId" Type="Int32" Nullable="false" />
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="ڕۆل" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="زانیاری" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="کردنەوە" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="زیادکردن" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="گۆڕانکاری" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="سڕینەوە" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vuser">
+    <Key>
+      <PropertyRef Name="userid" />
+      <PropertyRef Name="ناوی_سیانی" />
+      <PropertyRef Name="ڕۆڵ" />
+      <PropertyRef Name="ناوی_بەکارهێنەر" />
+      <PropertyRef Name="وشەی_نهێنی" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" />
+    <Property Name="ناوی_سیانی" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="ڕۆڵ" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="ناوی_بەکارهێنەر" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="وشەی_نهێنی" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="autherizationv">
+    <Key>
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="rolename" />
+      <PropertyRef Name="cancreate" />
+      <PropertyRef Name="canopen" />
+      <PropertyRef Name="candelete" />
+      <PropertyRef Name="canupdate" />
+      <PropertyRef Name="tname" />
+      <PropertyRef Name="permesionId" />
+    </Key>
+    <Property Name="roleid" Type="Int32" Nullable="false" />
+    <Property Name="rolename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="cancreate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="canopen" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="candelete" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="canupdate" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="tname" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="permesionId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="categorytable">
+    <Key>
+      <PropertyRef Name="catid" />
+    </Key>
+    <Property Name="catid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catname" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="pic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="Int32" />
+    <Property Name="lastmodified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="foodtable">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="catid" Type="Int32" Nullable="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fprice" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fpic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="Int32" />
+    <Property Name="lastmodiefied" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="expensetable">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="eprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="edate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modiefiedby" Type="Int32" />
+    <Property Name="lastmodiefied" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="saletable">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="sprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="qty" Type="Int32" Nullable="false" />
+    <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modifiedby" Type="Int32" />
+    <Property Name="lastmodified" Type="DateTime" Precision="3" />
+    <Property Name="note" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="typee" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="diliverytable">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="tell" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modiefiedby" Type="Int32" />
+    <Property Name="lastmodified" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="vorder">
+    <Key>
+      <PropertyRef Name="sid" />
+      <PropertyRef Name="sdate" />
+      <PropertyRef Name="createdby" />
+      <PropertyRef Name="wasl" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="sid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fpic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="sprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="qty" Type="Int32" Nullable="false" />
+    <Property Name="note" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="notetable">
+    <Key>
+      <PropertyRef Name="note" />
+    </Key>
+    <Property Name="note" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="wasltable">
+    <Key>
+      <PropertyRef Name="wid" />
+    </Key>
+    <Property Name="wid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="wasl" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="sdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="did" Type="Int32" Nullable="false" />
+    <Property Name="createdby" Type="Int32" Nullable="false" />
+    <Property Name="tell" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="modifiedby" Type="Int32" />
+    <Property Name="lastmodified" Type="DateTime" Precision="3" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="vexpense">
+    <Key>
+      <PropertyRef Name="eid" />
+      <PropertyRef Name="ename" />
+      <PropertyRef Name="eprice" />
+      <PropertyRef Name="edate" />
+      <PropertyRef Name="fullname" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="eid" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ename" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="eprice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="edate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="fullname" Type="String" Nullable="false" MaxLength="90" FixedLength="false" Unicode="true" />
+    <Property Name="isdeleted" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

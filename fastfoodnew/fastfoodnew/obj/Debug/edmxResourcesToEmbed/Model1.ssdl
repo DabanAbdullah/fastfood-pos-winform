@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="fastfoodModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categorytable">
+    <Key>
+      <PropertyRef Name="catid" />
+    </Key>
+    <Property Name="catid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catname" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="pic" Type="varbinary(max)" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modifiedby" Type="int" />
+    <Property Name="lastmodified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="diliverytable">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tell" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modiefiedby" Type="int" />
+    <Property Name="lastmodified" Type="datetime" />
+  </EntityType>
+  <EntityType Name="expensetable">
+    <Key>
+      <PropertyRef Name="eid" />
+    </Key>
+    <Property Name="eid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ename" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="eprice" Type="money" Nullable="false" />
+    <Property Name="edate" Type="date" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modiefiedby" Type="int" />
+    <Property Name="lastmodiefied" Type="datetime" />
+  </EntityType>
+  <EntityType Name="foodtable">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" Nullable="false" />
+    <Property Name="catid" Type="int" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="fprice" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="fpic" Type="varbinary(max)" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modifiedby" Type="int" />
+    <Property Name="lastmodiefied" Type="datetime" />
+  </EntityType>
+  <EntityType Name="notetable">
+    <Key>
+      <PropertyRef Name="note" />
+    </Key>
+    <Property Name="note" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="permesiontable">
+    <Key>
+      <PropertyRef Name="permesionId" />
+    </Key>
+    <Property Name="permesionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="cancreate" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="canopen" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="candelete" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="canupdate" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="tid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rolestable">
+    <Key>
+      <PropertyRef Name="roleid" />
+    </Key>
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="activated" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="saletable">
+    <Key>
+      <PropertyRef Name="sid" />
+    </Key>
+    <Property Name="sid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fid" Type="int" Nullable="false" />
+    <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sprice" Type="money" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+    <Property Name="sdate" Type="date" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="modifiedby" Type="int" />
+    <Property Name="lastmodified" Type="datetime" />
+    <Property Name="note" Type="nvarchar" MaxLength="120" />
+    <Property Name="typee" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="tablenames">
+    <Key>
+      <PropertyRef Name="tid" />
+    </Key>
+    <Property Name="tid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tname" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="tnamediplay" Type="nvarchar" MaxLength="70" Nullable="false" />
+  </EntityType>
+  <EntityType Name="usertable">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="90" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="wasltable">
+    <Key>
+      <PropertyRef Name="wid" />
+    </Key>
+    <Property Name="wid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="sdate" Type="date" Nullable="false" />
+    <Property Name="did" Type="int" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="tell" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="modifiedby" Type="int" />
+    <Property Name="lastmodified" Type="datetime" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.autherizationv' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="autherizationv">
+    <Key>
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="rolename" />
+      <PropertyRef Name="cancreate" />
+      <PropertyRef Name="canopen" />
+      <PropertyRef Name="candelete" />
+      <PropertyRef Name="canupdate" />
+      <PropertyRef Name="tname" />
+      <PropertyRef Name="permesionId" />
+    </Key>
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="rolename" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="cancreate" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="canopen" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="candelete" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="canupdate" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="tname" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="permesionId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.permessions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="permessions">
+    <Key>
+      <PropertyRef Name="permesionId" />
+      <PropertyRef Name="roleid" />
+      <PropertyRef Name="ڕۆل" />
+      <PropertyRef Name="زانیاری" />
+      <PropertyRef Name="کردنەوە" />
+      <PropertyRef Name="زیادکردن" />
+      <PropertyRef Name="گۆڕانکاری" />
+      <PropertyRef Name="سڕینەوە" />
+    </Key>
+    <Property Name="permesionId" Type="int" Nullable="false" />
+    <Property Name="roleid" Type="int" Nullable="false" />
+    <Property Name="ڕۆل" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="زانیاری" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="کردنەوە" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="زیادکردن" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="گۆڕانکاری" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="سڕینەوە" Type="nvarchar" MaxLength="5" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vexpense' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vexpense">
+    <Key>
+      <PropertyRef Name="eid" />
+      <PropertyRef Name="ename" />
+      <PropertyRef Name="eprice" />
+      <PropertyRef Name="edate" />
+      <PropertyRef Name="fullname" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="eid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ename" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="eprice" Type="money" Nullable="false" />
+    <Property Name="edate" Type="date" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="90" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vorder' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vorder">
+    <Key>
+      <PropertyRef Name="sid" />
+      <PropertyRef Name="sdate" />
+      <PropertyRef Name="createdby" />
+      <PropertyRef Name="wasl" />
+      <PropertyRef Name="isdeleted" />
+    </Key>
+    <Property Name="sid" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fname" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="fpic" Type="varbinary(max)" Nullable="false" />
+    <Property Name="sprice" Type="money" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+    <Property Name="note" Type="nvarchar" MaxLength="80" />
+    <Property Name="sdate" Type="date" Nullable="false" />
+    <Property Name="createdby" Type="int" Nullable="false" />
+    <Property Name="wasl" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="isdeleted" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'fastfood.dbo.vusers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vusers">
+    <Key>
+      <PropertyRef Name="userid" />
+      <PropertyRef Name="ناوی_سیانی" />
+      <PropertyRef Name="ڕۆڵ" />
+      <PropertyRef Name="ناوی_بەکارهێنەر" />
+      <PropertyRef Name="وشەی_نهێنی" />
+    </Key>
+    <Property Name="userid" Type="int" Nullable="false" />
+    <Property Name="ناوی_سیانی" Type="nvarchar" MaxLength="90" Nullable="false" />
+    <Property Name="ڕۆڵ" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="ناوی_بەکارهێنەر" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="وشەی_نهێنی" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="fastfoodModelStoreContainer">
+    <EntitySet Name="categorytable" EntityType="Self.categorytable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="diliverytable" EntityType="Self.diliverytable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="expensetable" EntityType="Self.expensetable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="foodtable" EntityType="Self.foodtable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="notetable" EntityType="Self.notetable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="permesiontable" EntityType="Self.permesiontable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rolestable" EntityType="Self.rolestable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saletable" EntityType="Self.saletable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tablenames" EntityType="Self.tablenames" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usertable" EntityType="Self.usertable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wasltable" EntityType="Self.wasltable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="autherizationv" EntityType="Self.autherizationv" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [autherizationv].[roleid] AS [roleid], 
+    [autherizationv].[rolename] AS [rolename], 
+    [autherizationv].[cancreate] AS [cancreate], 
+    [autherizationv].[canopen] AS [canopen], 
+    [autherizationv].[candelete] AS [candelete], 
+    [autherizationv].[canupdate] AS [canupdate], 
+    [autherizationv].[tname] AS [tname], 
+    [autherizationv].[permesionId] AS [permesionId]
+    FROM [dbo].[autherizationv] AS [autherizationv]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="permessions" EntityType="Self.permessions" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [permessions].[permesionId] AS [permesionId], 
+    [permessions].[roleid] AS [roleid], 
+    [permessions].[ڕۆل] AS [ڕۆل], 
+    [permessions].[زانیاری] AS [زانیاری], 
+    [permessions].[کردنەوە] AS [کردنەوە], 
+    [permessions].[زیادکردن] AS [زیادکردن], 
+    [permessions].[گۆڕانکاری] AS [گۆڕانکاری], 
+    [permessions].[سڕینەوە] AS [سڕینەوە]
+    FROM [dbo].[permessions] AS [permessions]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vexpense" EntityType="Self.vexpense" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vexpense].[eid] AS [eid], 
+    [vexpense].[ename] AS [ename], 
+    [vexpense].[eprice] AS [eprice], 
+    [vexpense].[edate] AS [edate], 
+    [vexpense].[fullname] AS [fullname], 
+    [vexpense].[isdeleted] AS [isdeleted]
+    FROM [dbo].[vexpense] AS [vexpense]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vorder" EntityType="Self.vorder" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vorder].[sid] AS [sid], 
+    [vorder].[fname] AS [fname], 
+    [vorder].[fpic] AS [fpic], 
+    [vorder].[sprice] AS [sprice], 
+    [vorder].[qty] AS [qty], 
+    [vorder].[note] AS [note], 
+    [vorder].[sdate] AS [sdate], 
+    [vorder].[createdby] AS [createdby], 
+    [vorder].[wasl] AS [wasl], 
+    [vorder].[isdeleted] AS [isdeleted]
+    FROM [dbo].[vorder] AS [vorder]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vusers" EntityType="Self.vusers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vusers].[userid] AS [userid], 
+    [vusers].[ناوی_سیانی] AS [ناوی_سیانی], 
+    [vusers].[ڕۆڵ] AS [ڕۆڵ], 
+    [vusers].[ناوی_بەکارهێنەر] AS [ناوی_بەکارهێنەر], 
+    [vusers].[وشەی_نهێنی] AS [وشەی_نهێنی]
+    FROM [dbo].[vusers] AS [vusers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

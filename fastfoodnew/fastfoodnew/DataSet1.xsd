@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="fastfoodConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="fastfoodConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.fastfoodnew.Properties.Settings.GlobalReference.Default.fastfoodConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vsaleTableAdapter" GeneratorDataComponentClassName="vsaleTableAdapter" Name="vsale" UserDataComponentName="vsaleTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="fastfoodConnectionString (Settings)" DbObjectName="fastfood.dbo.vsale" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM dbo.vsale</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fname" DataSetColumn="fname" />
+              <Mapping SourceColumn="sprice" DataSetColumn="sprice" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+              <Mapping SourceColumn="ko" DataSetColumn="ko" />
+              <Mapping SourceColumn="note" DataSetColumn="note" />
+              <Mapping SourceColumn="wasl" DataSetColumn="wasl" />
+              <Mapping SourceColumn="tell" DataSetColumn="tell" />
+              <Mapping SourceColumn="sdate" DataSetColumn="sdate" />
+              <Mapping SourceColumn="username" DataSetColumn="username" />
+              <Mapping SourceColumn="dname" DataSetColumn="dname" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sumsalebydateTableAdapter" GeneratorDataComponentClassName="sumsalebydateTableAdapter" Name="sumsalebydate" UserDataComponentName="sumsalebydateTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="fastfoodConnectionString (Settings)" DbObjectName="fastfood.dbo.sumsalebydate" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from sumsalebydate</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fname" DataSetColumn="fname" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+              <Mapping SourceColumn="ko" DataSetColumn="ko" />
+              <Mapping SourceColumn="sdate" DataSetColumn="sdate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sumsaledivTableAdapter" GeneratorDataComponentClassName="sumsaledivTableAdapter" Name="sumsalediv" UserDataComponentName="sumsaledivTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="fastfoodConnectionString (Settings)" DbObjectName="fastfood.dbo.sumsalediv" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from sumsalediv</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fname" DataSetColumn="fname" />
+              <Mapping SourceColumn="qty" DataSetColumn="qty" />
+              <Mapping SourceColumn="ko" DataSetColumn="ko" />
+              <Mapping SourceColumn="sdate" DataSetColumn="sdate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="expdataTableAdapter" GeneratorDataComponentClassName="expdataTableAdapter" Name="expdata" UserDataComponentName="expdataTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="fastfoodConnectionString (Settings)" DbObjectName="fastfood.dbo.vexp" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select * from vexp
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ename" DataSetColumn="ename" />
+              <Mapping SourceColumn="eprice" DataSetColumn="eprice" />
+              <Mapping SourceColumn="sdate" DataSetColumn="sdate" />
+              <Mapping SourceColumn="fullname" DataSetColumn="fullname" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vsale" msprop:Generator_TableClassName="vsaleDataTable" msprop:Generator_TableVarName="tablevsale" msprop:Generator_TablePropName="vsale" msprop:Generator_RowDeletingName="vsaleRowDeleting" msprop:Generator_RowChangingName="vsaleRowChanging" msprop:Generator_RowEvHandlerName="vsaleRowChangeEventHandler" msprop:Generator_RowDeletedName="vsaleRowDeleted" msprop:Generator_UserTableName="vsale" msprop:Generator_RowChangedName="vsaleRowChanged" msprop:Generator_RowEvArgName="vsaleRowChangeEvent" msprop:Generator_RowClassName="vsaleRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fname" msprop:Generator_ColumnVarNameInTable="columnfname" msprop:Generator_ColumnPropNameInRow="fname" msprop:Generator_ColumnPropNameInTable="fnameColumn" msprop:Generator_UserColumnName="fname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sprice" msprop:Generator_ColumnVarNameInTable="columnsprice" msprop:Generator_ColumnPropNameInRow="sprice" msprop:Generator_ColumnPropNameInTable="spriceColumn" msprop:Generator_UserColumnName="sprice" type="xs:decimal" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" />
+              <xs:element name="ko" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnko" msprop:Generator_ColumnPropNameInRow="ko" msprop:Generator_ColumnPropNameInTable="koColumn" msprop:Generator_UserColumnName="ko" type="xs:decimal" minOccurs="0" />
+              <xs:element name="note" msprop:Generator_ColumnVarNameInTable="columnnote" msprop:Generator_ColumnPropNameInRow="note" msprop:Generator_ColumnPropNameInTable="noteColumn" msprop:Generator_UserColumnName="note" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="wasl" msprop:Generator_ColumnVarNameInTable="columnwasl" msprop:Generator_ColumnPropNameInRow="wasl" msprop:Generator_ColumnPropNameInTable="waslColumn" msprop:Generator_UserColumnName="wasl" type="xs:decimal" />
+              <xs:element name="tell" msprop:Generator_ColumnVarNameInTable="columntell" msprop:Generator_ColumnPropNameInRow="tell" msprop:Generator_ColumnPropNameInTable="tellColumn" msprop:Generator_UserColumnName="tell">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sdate" msprop:Generator_ColumnVarNameInTable="columnsdate" msprop:Generator_ColumnPropNameInRow="sdate" msprop:Generator_ColumnPropNameInTable="sdateColumn" msprop:Generator_UserColumnName="sdate" type="xs:dateTime" />
+              <xs:element name="username" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_UserColumnName="username">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dname" msprop:Generator_ColumnVarNameInTable="columndname" msprop:Generator_ColumnPropNameInRow="dname" msprop:Generator_ColumnPropNameInTable="dnameColumn" msprop:Generator_UserColumnName="dname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sumsalebydate" msprop:Generator_TableClassName="sumsalebydateDataTable" msprop:Generator_TableVarName="tablesumsalebydate" msprop:Generator_TablePropName="sumsalebydate" msprop:Generator_RowDeletingName="sumsalebydateRowDeleting" msprop:Generator_RowChangingName="sumsalebydateRowChanging" msprop:Generator_RowEvHandlerName="sumsalebydateRowChangeEventHandler" msprop:Generator_RowDeletedName="sumsalebydateRowDeleted" msprop:Generator_UserTableName="sumsalebydate" msprop:Generator_RowChangedName="sumsalebydateRowChanged" msprop:Generator_RowEvArgName="sumsalebydateRowChangeEvent" msprop:Generator_RowClassName="sumsalebydateRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fname" msprop:Generator_ColumnVarNameInTable="columnfname" msprop:Generator_ColumnPropNameInRow="fname" msprop:Generator_ColumnPropNameInTable="fnameColumn" msprop:Generator_UserColumnName="fname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="ko" msprop:Generator_ColumnVarNameInTable="columnko" msprop:Generator_ColumnPropNameInRow="ko" msprop:Generator_ColumnPropNameInTable="koColumn" msprop:Generator_UserColumnName="ko" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sdate" msprop:Generator_ColumnVarNameInTable="columnsdate" msprop:Generator_ColumnPropNameInRow="sdate" msprop:Generator_ColumnPropNameInTable="sdateColumn" msprop:Generator_UserColumnName="sdate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sumsalediv" msprop:Generator_TableClassName="sumsaledivDataTable" msprop:Generator_TableVarName="tablesumsalediv" msprop:Generator_TablePropName="sumsalediv" msprop:Generator_RowDeletingName="sumsaledivRowDeleting" msprop:Generator_RowChangingName="sumsaledivRowChanging" msprop:Generator_RowEvHandlerName="sumsaledivRowChangeEventHandler" msprop:Generator_RowDeletedName="sumsaledivRowDeleted" msprop:Generator_UserTableName="sumsalediv" msprop:Generator_RowChangedName="sumsaledivRowChanged" msprop:Generator_RowEvArgName="sumsaledivRowChangeEvent" msprop:Generator_RowClassName="sumsaledivRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fname" msprop:Generator_ColumnVarNameInTable="columnfname" msprop:Generator_ColumnPropNameInRow="fname" msprop:Generator_ColumnPropNameInTable="fnameColumn" msprop:Generator_UserColumnName="fname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:int" minOccurs="0" />
+              <xs:element name="ko" msprop:Generator_ColumnVarNameInTable="columnko" msprop:Generator_ColumnPropNameInRow="ko" msprop:Generator_ColumnPropNameInTable="koColumn" msprop:Generator_UserColumnName="ko" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sdate" msprop:Generator_ColumnVarNameInTable="columnsdate" msprop:Generator_ColumnPropNameInRow="sdate" msprop:Generator_ColumnPropNameInTable="sdateColumn" msprop:Generator_UserColumnName="sdate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="expdata" msprop:Generator_TableClassName="expdataDataTable" msprop:Generator_TableVarName="tableexpdata" msprop:Generator_RowChangedName="expdataRowChanged" msprop:Generator_TablePropName="expdata" msprop:Generator_RowDeletingName="expdataRowDeleting" msprop:Generator_RowChangingName="expdataRowChanging" msprop:Generator_RowEvHandlerName="expdataRowChangeEventHandler" msprop:Generator_RowDeletedName="expdataRowDeleted" msprop:Generator_RowClassName="expdataRow" msprop:Generator_UserTableName="expdata" msprop:Generator_RowEvArgName="expdataRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ename" msprop:Generator_ColumnVarNameInTable="columnename" msprop:Generator_ColumnPropNameInRow="ename" msprop:Generator_ColumnPropNameInTable="enameColumn" msprop:Generator_UserColumnName="ename">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="eprice" msprop:Generator_ColumnVarNameInTable="columneprice" msprop:Generator_ColumnPropNameInRow="eprice" msprop:Generator_ColumnPropNameInTable="epriceColumn" msprop:Generator_UserColumnName="eprice" type="xs:decimal" />
+              <xs:element name="sdate" msprop:Generator_ColumnVarNameInTable="columnsdate" msprop:Generator_ColumnPropNameInRow="sdate" msprop:Generator_ColumnPropNameInTable="sdateColumn" msprop:Generator_UserColumnName="sdate" type="xs:dateTime" />
+              <xs:element name="fullname" msprop:Generator_ColumnVarNameInTable="columnfullname" msprop:Generator_ColumnPropNameInRow="fullname" msprop:Generator_ColumnPropNameInTable="fullnameColumn" msprop:Generator_UserColumnName="fullname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

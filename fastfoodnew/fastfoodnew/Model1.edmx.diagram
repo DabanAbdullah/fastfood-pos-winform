@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bae86ae2e41c42e8a8d42b3af1613f2f" Name="Diagram1">
+        <EntityTypeShape EntityType="fastfoodModel.tablename" Width="1.5" PointX="0.5" PointY="2.375" IsExpanded="true" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.usertable" Width="1.5" PointX="3.875" PointY="0.5" IsExpanded="true" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.rolestable" Width="1.5" PointX="0.5" PointY="0.5" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.permesiontable" Width="1.5" PointX="2.25" PointY="0.5" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.permession" Width="1.5" PointX="2.25" PointY="3" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.vuser" Width="1.5" PointX="3.875" PointY="3.125" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.autherizationv" Width="1.5" PointX="5.5" PointY="0.5" FillColor="192, 192, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.categorytable" Width="1.5" PointX="0.5" PointY="6" />
+        <EntityTypeShape EntityType="fastfoodModel.foodtable" Width="1.5" PointX="2" PointY="6" />
+        <EntityTypeShape EntityType="fastfoodModel.expensetable" Width="1.5" PointX="0.5" PointY="8.375" />
+        <EntityTypeShape EntityType="fastfoodModel.saletable" Width="1.5" PointX="3.5" PointY="6" />
+        <EntityTypeShape EntityType="fastfoodModel.diliverytable" Width="1.5" PointX="2" PointY="8.75" />
+        <EntityTypeShape EntityType="fastfoodModel.vorder" Width="1.5" PointX="7.25" PointY="1.375" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="fastfoodModel.notetable" Width="1.5" PointX="3.5" PointY="9.125" />
+        <EntityTypeShape EntityType="fastfoodModel.wasltable" Width="1.5" PointX="5.125" PointY="6" />
+        <EntityTypeShape EntityType="fastfoodModel.vexpense" Width="1.5" PointX="8.875" PointY="1.375" FillColor="192, 255, 255" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
