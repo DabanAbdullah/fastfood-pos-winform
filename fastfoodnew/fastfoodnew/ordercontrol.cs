@@ -24,7 +24,7 @@ namespace fastfoodnew
         }
 
 
-      public  saleform f { get; set; }
+        public  saleform f { get; set; }
        
         public  vorder v=new vorder();
         fastfoodEntities dbb = new fastfoodEntities();
@@ -77,11 +77,11 @@ namespace fastfoodnew
                     p[1] = new SqlParameter("@2", DateTime.Now);
                     p[2] = new SqlParameter("@3", usinfo.uid);
                     p[3] = new SqlParameter("@4", sid);
-                 db.docmd(sql, p);
-                  
-                
-                  
-                }
+                    db.docmd(sql, p);
+
+                f.getdata();
+
+            }
 
         }
 
@@ -104,8 +104,8 @@ namespace fastfoodnew
                         p[2] = new SqlParameter("@3", usinfo.uid);
                         p[3] = new SqlParameter("@4", sid);
                         db.docmd(sql, p);
-                   
-                   
+                    f.getdata();
+
                 }
             }
         }
@@ -135,7 +135,9 @@ namespace fastfoodnew
                         p[3] = new SqlParameter("@4", sid);
                         db.docmd(sql, p);
 
-                        (this.Parent as FlowLayoutPanel).Controls.Remove(this);
+                       // (this.Parent as FlowLayoutPanel).Controls.Remove(this);
+
+                        f.getdata();
 
                     }
 
@@ -223,7 +225,8 @@ namespace fastfoodnew
                 p[1] = new SqlParameter("@2", sid);
 
                 db.docmd(sql, p);
-
+                f.getdata();
+                
             }
                 
             }

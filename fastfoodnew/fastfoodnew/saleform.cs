@@ -88,7 +88,7 @@ namespace fastfoodnew
             {
                 v.sid = decimal.Parse(dr["sid"].ToString());
                 v.sprice= decimal.Parse(dr["sprice"].ToString());
-                sum=sum+ decimal.Parse(dr["sprice"].ToString());
+                sum=sum+ decimal.Parse(dr["sprice"].ToString()) * int.Parse(dr["qty"].ToString()) ;
                 v.fname = dr["fname"].ToString();
                 v.fpic = (byte[])dr["fpic"];
                 v.qty = int.Parse(dr["qty"].ToString());
@@ -265,7 +265,7 @@ namespace fastfoodnew
 
 
                 PictureBox ss = (sender) as PictureBox;
-            fid   = int.Parse(ss.Name);
+                fid   = int.Parse(ss.Name);
 
                 var price = dbb.foodtables.Where(x => x.fid == fid).FirstOrDefault().fprice;
 
@@ -342,7 +342,7 @@ namespace fastfoodnew
                 decimal money = decimal.Parse(resultString);
 
              
-                string typee = new String(NumberToText.arabtoeng(m.Text).Where(c => c != '-' && (c < '0' || c > '9')).ToArray());
+              string typee = new String(NumberToText.arabtoeng(m.Text).Where(c => c != '-' && (c < '0' || c > '9')).ToArray());
 
                 saletable s = new saletable();
                 s.sid = getsid();
@@ -351,7 +351,7 @@ namespace fastfoodnew
                 s.qty = 1;
                 s.sprice = money;
                 s.sdate = d.Date;
-                s.typee = typee;
+               s.typee = typee;
                 s.createdby = usinfo.uid;
                 s.isdeleted = "n";
                 dbb.saletables.Add(s);
