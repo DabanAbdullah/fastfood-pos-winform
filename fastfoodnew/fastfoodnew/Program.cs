@@ -19,7 +19,7 @@ namespace fastfoodnew
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             SetTelerikControlStyles();
-            Application.Run(new splash());
+            Application.Run(new Login());
         }
 
         private static void SetTelerikControlStyles()
